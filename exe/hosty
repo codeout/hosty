@@ -4,6 +4,6 @@ require 'rack'
 
 config = File.expand_path('../../config.ru', __FILE__)
 
-[80, 443].map {|port|
-  Thread.start { Rack::Server.start(config: config, Port: port) }
-}.each &:join
+Thread.start { Rack::Server.start(config: config, Port: 80) }
+Thread.start { Rack::Server.start(config: config, Port: 443) }.join  # single ^C to kill all
+
