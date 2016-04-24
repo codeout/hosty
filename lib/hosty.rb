@@ -1,5 +1,7 @@
-require "hosty/version"
+require 'hosty/hosts'
+require 'hosty/scheme_detectable'
+require 'hosty/virtual_hostable'
+require 'rack/reverse_proxy'
 
-module Hosty
-  # Your code goes here...
-end
+RackReverseProxy::RoundTrip.prepend Hosty::VirtualHostable
+RackReverseProxy::Rule::Candidate.prepend Hosty::SchemeDetectable
