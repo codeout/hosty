@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'rack'
+
+config = File.expand_path('../../config.ru', __FILE__)
+
+[80, 443].map {|port|
+  Thread.start { Rack::Server.start(config: config, Port: port) }
+}.each &:join
