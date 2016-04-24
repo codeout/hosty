@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Shintaro Kojima"]
   spec.email         = ["goodies@codeout.net"]
 
-  spec.summary       = %q{/etc/hosts based reverse proxy for development.}
+  spec.summary       = "/etc/hosts based tiny reverse proxy."
 
   spec.description   = <<-EOS
 /etc/hosts based tiny reverse proxy.

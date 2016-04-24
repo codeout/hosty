@@ -5,9 +5,9 @@
 /etc/hosts based tiny reverse proxy.
 
 You may sometimes run a web application on ```http://localhost:3000``` during development, or
-sometimes you may configure local port forward on ```http://localhost:8080``` with SSH to access web servers behind firewalls.
+sometimes you may configure a local port forward on ```http://localhost:8080``` with SSH to access web server behind firewalls.
 
-Hosty loads your ```/etc/hosts``` and acts as a reverse proxy to simplify the URLs.
+Hosty loads your ```/etc/hosts``` and acts as reverse proxies to simplify the URLs.
 It allows you to manage mappings of local server name and port on ```/etc/hosts```.
 
 ## Installation
