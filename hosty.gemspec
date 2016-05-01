@@ -20,7 +20,7 @@ Hosty loads your /etc/hosts and acts as a reverse proxy to simplify the URLs.
 It allows you to manage mappings of local server name and port on /etc/hosts.
                        EOS
 
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/codeout/hosty"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"

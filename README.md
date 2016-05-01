@@ -13,8 +13,7 @@ It allows you to manage mappings of local server name and port on ```/etc/hosts`
 ## Installation
 
 ```zsh
-$ gem install specific_install
-$ gem specific_install https://github.com/codeout/hosty
+$ gem install hosty
 ```
 
 ## Usage
