@@ -31,7 +31,7 @@ module Hosty
     private
 
     def content
-      return if @content
+      return @content if @content
 
       columns = @line.split
       return unless columns[0].local_address?
@@ -40,7 +40,9 @@ module Hosty
       return unless mark_index
       return unless columns[mark_index+1] && columns[mark_index+1].port_number?
 
-      {servers: columns[1..mark_index-1], port: columns[mark_index+1].port_number}
+      @content = {servers: columns[1..mark_index-1],
+                  port: columns[mark_index+1].port_number,
+                  options: columns[mark_index+2..-1]}
     end
   end
 end
