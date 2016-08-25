@@ -4,6 +4,4 @@ require 'rack'
 
 config = File.expand_path('../../config.ru', __FILE__)
 
-Thread.start { Rack::Server.start(config: config, Port: 80) }
-Thread.start { Rack::Server.start(config: config, Port: 443) }.join  # single ^C to kill all
-
+Rack::Server.start(config: config, Port: 80)

@@ -31,14 +31,28 @@ If you have lines below in your ```/etc/hosts```:
 127.0.0.1 rails  # :3000
 ```
 
-Hosty accepts ```http(s)://internal.example.com/foo``` locally and proxies it
-into ```http(s)://internal.example.com:8080/foo``` for example. URL scheme will be kept intact.
+Hosty accepts ```http://internal.example.com/foo``` locally and proxies it
+into ```http://internal.example.com:8080/foo``` for example.
 
-Shortly,
 
-* http(s)://internal.example.com → http(s)://internal.example.com:8080
-* http(s)://internal → http(s)://internal:8080
-* http(s)://rails → http(s)://rails:3000
+### Use https
+
+You can specify ```tls``` option at the end of each line:
+
+```
+127.0.0.1 internal.example.com internal  # :8080 tls
+```
+
+Hosty accepts ```http://internal.example.com/foo``` and proxies into ```https://internal.example.com:8080/foo```. Also, you can spacify 'verify_none' to skip server cert verification.
+
+```
+127.0.0.1 internal.example.com internal  # :8080 tls verify_none
+```
+
+**Note**
+
+The URL scheme in your browser is always 'http'.
+
 
 
 ## Copyright and License
