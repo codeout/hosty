@@ -4,6 +4,8 @@ class TestHosts < Test::Unit::TestCase
   test 'load nothing for hosty' do
     hosts = <<-EOS
       127.0.0.1 a b c
+      127.0.0.1 a b c  # 80
+      127.0.0.1 a b c  # 80 :80
       192.168.0.1 a b  # :80
     EOS
 
