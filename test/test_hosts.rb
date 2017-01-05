@@ -53,4 +53,20 @@ class TestHosts < Test::Unit::TestCase
     end
     assert_equal expected, maps
   end
+
+  test 'skip blank lines' do
+    hosts = <<-EOS
+
+      127.0.0.1 foo.example.com foo1       # :8080
+    EOS
+    expected = [
+      {servers: ['foo.example.com', 'foo1'], port: 8080, options: []}
+    ]
+
+    maps = []
+    Hosty::Hosts.send(:parse, hosts) do |map|
+      maps << map
+    end
+    assert_equal expected, maps
+  end
 end

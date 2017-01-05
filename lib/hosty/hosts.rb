@@ -34,7 +34,7 @@ module Hosty
       return @content if @content
 
       columns = @line.split
-      return unless columns[0].local_address?
+      return unless columns[0] && columns[0].local_address?
 
       mark_index = columns.index('#')
       return unless mark_index
