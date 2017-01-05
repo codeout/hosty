@@ -4,4 +4,4 @@ require 'rack'
 
 config = File.expand_path('../../config.ru', __FILE__)
 
-Rack::Server.start(config: config, Port: 80)
+Rack::Server.start(config: config, Host: '127.0.0.1', Port: 80)
