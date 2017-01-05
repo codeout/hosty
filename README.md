@@ -57,4 +57,4 @@ The URL scheme in your browser is always 'http'.
 
 ## Copyright and License
 
-Copyright (c) 2016 Shintaro Kojima. Code released under the [MIT license](LICENSE).
+Copyright (c) 2017 Shintaro Kojima. Code released under the [MIT license](LICENSE).
