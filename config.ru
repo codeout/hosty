@@ -10,7 +10,7 @@ use Rack::ReverseProxy do
 
 
     map[:servers].each do |server|
-      reverse_proxy /(.*)/, "#{scheme}://#{server}:#{port}/$1", {vhost: server}.merge(proxy_options)
+      reverse_proxy /(.*)/, "#{scheme}://#{server}:#{port}$1", {vhost: server}.merge(proxy_options)
     end
   end
 end
