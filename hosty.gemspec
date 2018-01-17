@@ -1,10 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'hosty/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "hosty"
-  spec.version       = '0.0.4'
+  spec.version       = Hosty::VERSION
   spec.authors       = ["Shintaro Kojima"]
   spec.email         = ["goodies@codeout.net"]
 
