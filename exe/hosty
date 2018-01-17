@@ -1,7 +1,36 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
+require 'pathname'
 require 'rack'
 
+$: << File.expand_path('../../lib', Pathname.new(__FILE__).realpath)
+
+require 'hosty'
+
+
 config = File.expand_path('../../config.ru', __FILE__)
+
+opts = OptionParser.new do |opts|
+  opts.banner = 'hosty: /etc/hosts based tiny reverse proxy'
+  opts.define_head 'Usage: hosty [options]'
+  opts.separator ''
+  opts.separator 'Options:'
+
+  opts.on '-d', '--debug', 'Turn on debug mode' do
+    $HOSTY_DEBUG = true
+  end
+
+  opts.on_tail '-h', '--help', 'Show this message' do
+    puts opts
+    exit
+  end
+
+  opts.on_tail '-v', '--version', 'Show version' do
+    puts Hosty::VERSION
+    exit
+  end
+end
+opts.parse!
 
 Rack::Server.start(config: config, Host: '127.0.0.1', Port: 80)
