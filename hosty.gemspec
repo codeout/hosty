@@ -30,9 +30,9 @@ It allows you to manage mappings of local server name and port on /etc/hosts.
 
   spec.add_runtime_dependency "rack-reverse-proxy"
 
-  spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "test-unit", "~> 3.0"
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "test-unit"
 
   spec.required_ruby_version = '>= 2.1.0'
 end
