@@ -29,6 +29,7 @@ It allows you to manage mappings of local server name and port on /etc/hosts.
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "rack-reverse-proxy"
+  spec.add_runtime_dependency "webrick"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
