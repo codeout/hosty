@@ -3,6 +3,7 @@
 require 'optparse'
 require 'pathname'
 require 'rack'
+require 'rackup'
 
 $: << File.expand_path('../../lib', Pathname.new(__FILE__).realpath)
 
@@ -33,4 +34,4 @@ opts = OptionParser.new do |opts|
 end
 opts.parse!
 
-Rack::Server.start(config: config, Host: '127.0.0.1', Port: 80)
+Rackup::Server.start(config: config, Host: '127.0.0.1', Port: 80)
