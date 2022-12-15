@@ -34,6 +34,4 @@ It allows you to manage mappings of local server name and port on /etc/hosts.
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "test-unit"
-
-  spec.required_ruby_version = '>= 2.1.0'
 end
